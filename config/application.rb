@@ -16,6 +16,11 @@ module MultiSqlitePoc
     # Common ones are `templates`, `generators`, or `middleware`, for example.
     config.autoload_lib(ignore: %w[assets tasks])
 
+    # Active Record Tenanted: tenanted models inherit from TenantedRecord (not ApplicationRecord).
+    # This tells the gem's middleware, Action Cable, Active Job, and Active Storage
+    # integrations to use TenantedRecord as the connection class.
+    config.active_record_tenanted.connection_class = "TenantedRecord"
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

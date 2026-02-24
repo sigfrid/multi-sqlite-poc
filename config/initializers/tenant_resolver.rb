@@ -1,6 +1,6 @@
 # Tenants are resolved from the first path segment of the URL.
 # A request to "example.com/acme/..." sets the tenant context to "acme",
-# connecting all ApplicationRecord queries to storage/tenants/<env>/acme/db/main.sqlite3.
+# connecting all TenantedRecord queries to storage/tenants/<env>/acme/db/main.sqlite3.
 #
 # The /:tenant scope in config/routes.rb populates request.path_parameters[:tenant].
 #
