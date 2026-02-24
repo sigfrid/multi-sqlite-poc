@@ -1,4 +1,4 @@
 class ApplicationRecord < ActiveRecord::Base
   primary_abstract_class
-  tenanted
+  tenanted "tenant_db"
 end

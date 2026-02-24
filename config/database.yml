@@ -12,6 +12,9 @@ default: &default
 development:
   primary:
     <<: *default
+    database: storage/development.sqlite3
+  tenant_db:
+    <<: *default
     database: storage/tenants/development/%{tenant}/db/main.sqlite3
     tenanted: true
 
@@ -21,6 +24,9 @@ development:
 test:
   primary:
     <<: *default
+    database: storage/test.sqlite3
+  tenant_db:
+    <<: *default
     database: storage/tenants/test/%{tenant}/db/main.sqlite3
     tenanted: true
 
@@ -28,6 +34,9 @@ test:
 # is mounted as a persistent Docker volume in config/deploy.yml.
 production:
   primary:
+    <<: *default
+    database: storage/production.sqlite3
+  tenant_db:
     <<: *default
     database: storage/tenants/production/%{tenant}/db/main.sqlite3
     tenanted: true
