@@ -1,4 +1,4 @@
 class TenantedRecord < ActiveRecord::Base
   self.abstract_class = true
-  tenanted "tenant_db"
+  tenanted "tenanted_db"
 end

@@ -13,7 +13,7 @@ development:
   primary:
     <<: *default
     database: storage/development.sqlite3
-  tenant_db:
+  tenanted_db:
     <<: *default
     database: storage/tenants/development/%{tenant}/db/main.sqlite3
     tenanted: true
@@ -25,7 +25,7 @@ test:
   primary:
     <<: *default
     database: storage/test.sqlite3
-  tenant_db:
+  tenanted_db:
     <<: *default
     database: storage/tenants/test/%{tenant}/db/main.sqlite3
     tenanted: true
@@ -36,7 +36,7 @@ production:
   primary:
     <<: *default
     database: storage/production.sqlite3
-  tenant_db:
+  tenanted_db:
     <<: *default
     database: storage/tenants/production/%{tenant}/db/main.sqlite3
     tenanted: true
